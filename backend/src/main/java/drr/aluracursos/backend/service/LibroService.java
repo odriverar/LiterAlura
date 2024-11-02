@@ -18,7 +18,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -30,6 +30,10 @@ public class LibroService implements ILibroService {
     private final AutorRepository autorRepository;
     private final IdiomaRepository idiomaRepository;
 
+    /**
+     * ! Constructor de las dependencias
+     * ? En lugar de usar @Autowired activamos las inyecciones con el constructor.
+     * **/
     public LibroService(IConsumoAPI consumoAPI, IConvierteDatos convierteDatos, LibroRepository libroRepository, AutorRepository autorRepository, IdiomaRepository idiomaRepository) {
         this.consumoAPI = consumoAPI;
         this.convierteDatos = convierteDatos;
@@ -44,11 +48,16 @@ public class LibroService implements ILibroService {
     private List<DatosLibro> getDatosLibro(String tituloLibro) {
         String tituloBuscar = URLEncoder.encode(tituloLibro, StandardCharsets.UTF_8);
         var json = consumoAPI.obtenerDatos(URL_BASE + tituloBuscar);
-        RespuestaDTO respuesta = convierteDatos.obtenerDatos(json, new TypeReference<RespuestaDTO>() {});
-        List<DatosLibro> resultadoLibros = respuesta.resultados();
-        return resultadoLibros;
+        RespuestaDTO respuesta = convierteDatos.obtenerDatos(json, new TypeReference<>() {
+        });
+        return respuesta.resultados();
     }
 
+    /**
+     * ! Almacena libro en la base de datos, busqueda por titulo:
+     * @param tituloLibro -> Tiutlo del libro o parte del titulo
+     * ?void -> Almacenara los libros en la base de datos que coincidadn con el titulo ingresado-
+     * */
     private void almacenarLibro(String tituloLibro) {
         List<DatosLibro> datosLibro = getDatosLibro(tituloLibro);
         for (DatosLibro datos : datosLibro) {
@@ -128,9 +137,15 @@ public class LibroService implements ILibroService {
      * */
     @Override
     public List<LibroDTO> buscarLibrosPorTitulo(String titulo) {
+        almacenarLibro(titulo);
         return getConvierteDatos(libroRepository.findByTituloContainingIgnoreCase(titulo));
     }
 
+    /**
+     * Buscar libros por idioma
+     * @param idioma -> Se registra el codigo de idioma ejemplo: en, es, fr
+     * @return Una lista de libors que coincidan con el idioma.
+     * */
     @Override
     public List<LibroDTO> buscarLibrosPorIdioma(String idioma) {
         return getConvierteDatos(libroRepository.findByIdiomas(idioma));

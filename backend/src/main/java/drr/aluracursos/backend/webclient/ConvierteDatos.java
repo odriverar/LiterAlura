@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ConvierteDatos implements IConvierteDatos{
-    private ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
     public <T> T obtenerDatos(String json, TypeReference<T> tipo){

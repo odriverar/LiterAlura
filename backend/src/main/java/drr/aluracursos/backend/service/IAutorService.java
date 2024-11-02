@@ -5,6 +5,6 @@ import drr.aluracursos.backend.dto.AutorConLibrosDTO;
 import java.util.List;
 
 public interface IAutorService {
-    public List<AutorConLibrosDTO> obtenerAutoresConLibros();
-    public List<AutorConLibrosDTO> obtenerAutoresVivosAUnAno(Integer ano);
+    List<AutorConLibrosDTO> obtenerAutoresConLibros();
+    List<AutorConLibrosDTO> obtenerAutoresVivosAUnAno(Integer ano);
 }
