@@ -18,6 +18,26 @@ public class Autor {
 
     public Autor() {}
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setAnoNacimiento(Integer anoNacimiento) {
+        this.anoNacimiento = anoNacimiento;
+    }
+
+    public void setAnoFallecimiento(Integer anoFallecimiento) {
+        this.anoFallecimiento = anoFallecimiento;
+    }
+
+    public void setLibros(Set<Libro> libros) {
+        this.libros = libros;
+    }
+
     public Autor(String nombre, Integer anoNacimiento, Integer anoFallecimiento) {
         this.nombre = nombre;
         this.anoNacimiento = anoNacimiento;

@@ -53,4 +53,24 @@ public class Libro {
     public Long getDescargas() {
         return descargas;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAutores(Set<Autor> autores) {
+        this.autores = autores;
+    }
+
+    public void setIdiomas(Set<Idioma> idiomas) {
+        this.idiomas = idiomas;
+    }
+
+    public void setDescargas(Long descargas) {
+        this.descargas = descargas;
+    }
 }
