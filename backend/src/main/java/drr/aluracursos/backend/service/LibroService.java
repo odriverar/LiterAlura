@@ -42,8 +42,7 @@ public class LibroService implements ILibroService {
         this.idiomaRepository = idiomaRepository;
     }
 
-    @Value("${api.url}")
-    private String URL_BASE;
+    private final String URL_BASE = "https://gutendex.com/books/?search=";
 
     private List<DatosLibro> getDatosLibro(String tituloLibro) {
         String tituloBuscar = URLEncoder.encode(tituloLibro, StandardCharsets.UTF_8);
