@@ -1,7 +1,5 @@
 package drr.aluracursos.frontend.model;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Autor {
     private Integer id;
     private String nombre;
@@ -21,40 +19,20 @@ public class Autor {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public Integer getAnoNacimiento() {
         return anoNacimiento;
     }
 
-    public void setAnoNacimiento(Integer anoNacimiento) {
-        this.anoNacimiento = anoNacimiento;
-    }
-
     public Integer getAnoFallecimiento() {
         return anoFallecimiento;
     }
 
-    public void setAnoFallecimiento(Integer anoFallecimiento) {
-        this.anoFallecimiento = anoFallecimiento;
-    }
-
     public String getTitulos() {
         return titulos;
-    }
-
-    public void setTitulos(String titulos) {
-        this.titulos = titulos;
     }
 
     @Override

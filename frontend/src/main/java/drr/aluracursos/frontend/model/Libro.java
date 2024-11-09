@@ -19,40 +19,20 @@ public class Libro {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getTitulo() {
         return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public String getAutores() {
         return autores;
     }
 
-    public void setAutores(String autores) {
-        this.autores = autores;
-    }
-
     public String getIdiomas() {
         return idiomas;
     }
 
-    public void setIdiomas(String idiomas) {
-        this.idiomas = idiomas;
-    }
-
     public Long getDescargas() {
         return descargas;
-    }
-
-    public void setDescargas(Long descargas) {
-        this.descargas = descargas;
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-    private Scanner teclado = new Scanner(System.in);
+    private final Scanner teclado = new Scanner(System.in);
 
     private final PrincipalService principalService = new PrincipalService();
 
@@ -174,7 +174,7 @@ public class Principal {
                 if (opcElegida == 0) {
                     return;
                 } else {
-                    Idioma idioma = idiomas.stream().filter(i -> i.getId() == opcElegida).findFirst().orElse(null);
+                    Idioma idioma = idiomas.stream().filter(i -> i.getId().equals(opcElegida)).findFirst().orElse(null);
 
                     if (idioma == null) {
                         System.out.println("Valor ingresado es incorrecto, favor de verificar.");
@@ -185,13 +185,14 @@ public class Principal {
                     System.out.println("Cantidad de libros encontrados: " + libros.size());
                     libros.forEach(libro -> System.out.println(libro.toString()));
                     System.out.println("Cantidad de libros encontrados: " + libros.size());
+
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                    mensajeFinal();
                 }
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: Valor ingresado es incorrecto, por favor verifique.");
             }
         }
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        mensajeFinal();
     }
 
 

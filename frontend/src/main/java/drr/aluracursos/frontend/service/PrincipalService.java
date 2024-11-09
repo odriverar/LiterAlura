@@ -51,13 +51,12 @@ public class PrincipalService {
         AtomicInteger contador  = new AtomicInteger(0);
         var json = consumo.obtenerDatos(URL_BASE + "idiomas");
         List<String> idiomas = convierteDatos.convertirDatos(json, new TypeReference<>() {});
-        List<Idioma> idiomasEncontrados = idiomas.stream()
+        return idiomas.stream()
                 .map(i -> new Idioma(
                         contador.incrementAndGet(),
                         i
                 ))
                 .collect(Collectors.toList());
-        return idiomasEncontrados;
     }
 
     public List<Libro> buscarLibrosPorIdioma(Idioma idioma) {
