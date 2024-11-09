@@ -1,11 +1,11 @@
 package drr.aluracursos.frontend.model;
 
 public class Libro {
-    private int id;
-    private String titulo;
-    private String autores;
-    private String idiomas;
-    private Long descargas;
+    private final int id;
+    private final String titulo;
+    private final String autores;
+    private final String idiomas;
+    private final Long descargas;
 
     public Libro(int id, String titulo, String autores, String idiomas, Long descargas) {
         this.id = id;

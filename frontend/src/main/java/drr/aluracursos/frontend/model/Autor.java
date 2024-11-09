@@ -1,11 +1,11 @@
 package drr.aluracursos.frontend.model;
 
 public class Autor {
-    private Integer id;
-    private String nombre;
-    private Integer anoNacimiento;
-    private Integer anoFallecimiento;
-    private String titulos;
+    private final Integer id;
+    private final String nombre;
+    private final Integer anoNacimiento;
+    private final Integer anoFallecimiento;
+    private final String titulos;
 
     public Autor(Integer id, String nombre, Integer anoNacimiento, Integer anoFallecimiento, String titulos) {
         this.id = id;

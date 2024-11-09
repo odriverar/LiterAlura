@@ -169,7 +169,7 @@ public class Principal {
             try {
                 opcionIdioma = Integer.parseInt(input);
 
-                Integer opcElegida = opcionIdioma;
+                int opcElegida = opcionIdioma;
 
                 if (opcElegida == 0) {
                     return;

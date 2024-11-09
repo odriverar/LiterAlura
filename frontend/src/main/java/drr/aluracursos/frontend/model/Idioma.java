@@ -1,8 +1,8 @@
 package drr.aluracursos.frontend.model;
 
 public class Idioma {
-    private Integer id;
-    private String descripcion;
+    private final Integer id;
+    private final String descripcion;
 
     public Idioma(Integer id, String descripcion) {
         this.id = id;
