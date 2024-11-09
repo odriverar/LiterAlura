@@ -9,7 +9,7 @@ public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
+    @Column(unique = true, length = 1000)
     private String titulo;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

@@ -21,7 +21,7 @@ public class AutorController {
         return autorService.obtenerAutoresConLibros();
     }
 
-    @GetMapping("/{ano}")
+    @GetMapping("/anio={ano}")
     public List<AutorConLibrosDTO> obtenerAutoresPorAno(@PathVariable Integer ano) {
         return autorService.obtenerAutoresVivosAUnAno(ano);
     }
