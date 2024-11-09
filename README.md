@@ -10,13 +10,13 @@ Este proyecto es una biblioteca en línea desarrollada en Java como parte del de
 ```
 ## Tecnologías Utilizadas
 
-### Backend
+### [Backend](./backend/)
 - **Lenguaje**: Java
 - **Framework**: Spring Boot
 - **Base de Datos**: PostgreSQL, o el de tu preferencia.
 - **Control de Dependencias**: Maven
 
-### Frontend
+### [Frontend](./frontend/)
 - **Tipo de Aplicación**: Aplicación de consola que interactúa con el backend
 - **Lenguajes**: Java 
 - **Control de Dependencias**: Maven
